@@ -1,0 +1,37 @@
+
+server:
+  port: 9999
+  servlet:
+    context-path: /sb
+    jsp:
+      init-parameters:
+        development: true
+spring:
+  freemarker:
+    suffix: .ftl
+    prefix: /
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/lucene
+    username: root
+    password: 123456
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
+  data:
+    elasticsearch:
+      cluster-nodes: 192.168.80.145:9300
+  mvc:
+    view:
+      suffix: .jsp
+      prefix: /
+  main:
+    allow-bean-definition-overriding: true
+
+
+mybatis:
+  mapper-locations: classpath:com/cps/www/dao/impl/*.xml
+  type-aliases-package: com.cps.www.entity
+
